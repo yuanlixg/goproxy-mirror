@@ -73,14 +73,14 @@ func mirrorHandler(orig, mirror string, inner http.Handler) http.Handler {
 			mirrorPath := mirror + strings.TrimPrefix(r.URL.Path, orig)
 
 			if strings.HasSuffix(mirrorPath, "/@v/list") {
-				to := filepath.Join(cacheDir, r.URL.Path)
-				err = copyFile(filepath.Join(cacheDir, mirrorPath), to)
-				if err == nil {
-					inner.ServeHTTP(w, r)
-				} else {
-					removeFile(to)
-					w.Write([]byte{})
+				from := filepath.Join(cacheDir, mirrorPath)
+				if _, err = os.Stat(from); err == nil {
+					if buf, err := ioutil.ReadFile(from); err == nil {
+						w.Write(buf)
+						return
+					}
 				}
+				w.Write([]byte{})
 				return
 			}
 
