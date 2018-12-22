@@ -1,0 +1,13 @@
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# macOS Thumbnails
+._*
