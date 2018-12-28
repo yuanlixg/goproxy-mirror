@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/goproxyio/goproxy/module"
+	"github.com/yuanlixg/goproxy-mirror/module"
 )
 
 var cacheDir string
