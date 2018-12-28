@@ -1,7 +1,7 @@
 
 # GOPROXY mirror
 
-给[https://github.com/goproxyio/goproxy](github.com/goproxyio/goproxy)添加从镜像站点获取的功能
+给[github.com/goproxyio/goproxy](https://github.com/goproxyio/goproxy)添加从镜像站点获取的功能
 
 
 ## 原英文 README 见下面
